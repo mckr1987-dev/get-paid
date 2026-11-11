@@ -19,7 +19,7 @@
   },
   "private": true,
   "cds": {
-     "reminder": { "mailMode": "log" },
+    "reminder": { "mailMode": "log" },
     "requires": {
       "ZFI_OPEN_ITEMS_SRV": {
         "kind": "odata",
@@ -38,6 +38,15 @@
           "credentials": {
             "destination": "S4_ONPREM",
             "path": "/sap/opu/odata/sap/ZCUSTOMER_CONTACT_SRV"
+          }
+        }
+      },
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "viewer": { "password": "viewer", "roles": ["Viewer"] },
+            "agent":  { "password": "agent",  "roles": ["CollectionsAgent"] }
           }
         }
       }
