@@ -1,0 +1,31 @@
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Viewer"
+    },
+    {
+      "name": "$XSAPPNAME.CollectionsAgent",
+      "description": "CollectionsAgent"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.Viewer"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "CollectionsAgent",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.CollectionsAgent"
+      ],
+      "attribute-references": []
+    }
+  ]
+}

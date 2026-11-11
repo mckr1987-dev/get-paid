@@ -6,7 +6,8 @@
     "@sap/cds": "^10",
     "@sap-cloud-sdk/connectivity": "^4",
     "@sap-cloud-sdk/http-client": "^4",
-    "@sap-cloud-sdk/resilience": "^4"
+    "@sap-cloud-sdk/resilience": "^4",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^3",
@@ -19,7 +20,9 @@
   },
   "private": true,
   "cds": {
-    "reminder": { "mailMode": "log" },
+    "reminder": {
+      "mailMode": "log"
+    },
     "requires": {
       "ZFI_OPEN_ITEMS_SRV": {
         "kind": "odata",
@@ -45,10 +48,23 @@
         "auth": {
           "kind": "mocked",
           "users": {
-            "viewer": { "password": "viewer", "roles": ["Viewer"] },
-            "agent":  { "password": "agent",  "roles": ["CollectionsAgent"] }
+            "viewer": {
+              "password": "viewer",
+              "roles": [
+                "Viewer"
+              ]
+            },
+            "agent": {
+              "password": "agent",
+              "roles": [
+                "CollectionsAgent"
+              ]
+            }
           }
         }
+      },
+      "[production]": {
+        "auth": "xsuaa"
       }
     }
   },
